@@ -6,127 +6,406 @@
 <meta name="theme-color" content="#070A12">
 <title>استافكو إنترناشيونال</title>
 
+<!-- خط Cairo -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Arial,sans-serif}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:"Cairo",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
+}
+
 html{scroll-behavior:smooth}
+
 body{
 background:
 radial-gradient(circle at 10% 0%,#063b72 0,transparent 28%),
 radial-gradient(circle at 100% 20%,#29205c 0,transparent 30%),
-#070A12;color:#fff;min-height:100vh
+#070A12;
+color:#fff;
+min-height:100vh
 }
+
 .header{
-padding:25px 20px 100px;min-height:490px;position:relative;overflow:hidden;
+padding:25px 20px 100px;
+min-height:490px;
+position:relative;
+overflow:hidden;
 border-radius:0 0 45px 45px;
 background:linear-gradient(145deg,#111c30,#060a12);
 box-shadow:0 25px 80px #0008
 }
-.header:before{
-content:"";position:absolute;width:350px;height:350px;right:-130px;top:-150px;
-background:#007aff55;border-radius:50%;filter:blur(40px)
-}
-.top,.hero,.container{max-width:900px;margin:auto;position:relative;z-index:2}
-.top{display:flex;justify-content:space-between;align-items:center}
-.badge{
-padding:9px 15px;border-radius:30px;font-size:10px;font-weight:bold;
-color:#8dc9ff;background:#ffffff0d;border:1px solid #ffffff18
-}
-.logo{
-width:65px;height:65px;border-radius:21px;display:grid;place-items:center;
-background:linear-gradient(145deg,#007aff77,#4d55ff33);
-border:1px solid #ffffff22;box-shadow:0 15px 40px #007aff44
-}
-.logo svg{width:34px}
-.hero{margin-top:70px}
-.hero small{color:#60b5ff;font-weight:bold}
-.hero h1{
-font-size:clamp(40px,9vw,72px);line-height:1.05;margin:12px 0 18px;
-background:linear-gradient(100deg,#fff,#9dcbff,#fff);
--webkit-background-clip:text;color:transparent
-}
-.hero p{max-width:580px;color:#9ba8ba;font-size:15px;line-height:1.9}
-.buttons{display:flex;gap:10px;margin-top:25px;flex-wrap:wrap}
-.btn{
-padding:14px 20px;border-radius:17px;text-decoration:none;font-weight:bold;font-size:13px
-}
-.primary{background:linear-gradient(135deg,#007aff,#5058ff);color:white;box-shadow:0 10px 30px #007aff44}
-.secondary{background:#ffffff0b;color:#dceaff;border:1px solid #ffffff15}
 
-.container{margin-top:-45px;padding:0 16px}
+.header:before{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+right:-130px;
+top:-150px;
+background:#007aff55;
+border-radius:50%;
+filter:blur(40px)
+}
+
+.top,.hero,.container{
+max-width:900px;
+margin:auto;
+position:relative;
+z-index:2
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center
+}
+
+.badge{
+padding:9px 15px;
+border-radius:30px;
+font-size:10px;
+font-weight:bold;
+color:#8dc9ff;
+background:#ffffff0d;
+border:1px solid #ffffff18
+}
+
+.logo{
+width:65px;
+height:65px;
+border-radius:21px;
+display:grid;
+place-items:center;
+background:linear-gradient(145deg,#007aff77,#4d55ff33);
+border:1px solid #ffffff22;
+box-shadow:0 15px 40px #007aff44
+}
+
+.logo svg{width:34px}
+
+.hero{margin-top:70px}
+
+.hero small{
+color:#60b5ff;
+font-weight:bold
+}
+
+.hero h1{
+font-size:clamp(40px,9vw,72px);
+line-height:1.05;
+margin:12px 0 18px;
+font-weight:800;
+background:linear-gradient(100deg,#fff,#9dcbff,#fff);
+-webkit-background-clip:text;
+color:transparent
+}
+
+.hero p{
+max-width:580px;
+color:#9ba8ba;
+font-size:15px;
+line-height:1.9;
+font-weight:500
+}
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:25px;
+flex-wrap:wrap
+}
+
+.btn{
+padding:14px 20px;
+border-radius:17px;
+text-decoration:none;
+font-weight:bold;
+font-size:13px
+}
+
+.primary{
+background:linear-gradient(135deg,#007aff,#5058ff);
+color:white;
+box-shadow:0 10px 30px #007aff44
+}
+
+.secondary{
+background:#ffffff0b;
+color:#dceaff;
+border:1px solid #ffffff15
+}
+
+.container{
+margin-top:-45px;
+padding:0 16px
+}
+
 .card,.product,.person,.contact{
 background:linear-gradient(145deg,#ffffff10,#ffffff05);
 border:1px solid #ffffff12;
 box-shadow:0 15px 45px #0005;
 backdrop-filter:blur(25px)
 }
-.card{border-radius:28px;padding:8px 20px}
-.row{display:flex;align-items:center;gap:14px;padding:17px 0}
-.row:not(:last-child){border-bottom:1px solid #ffffff0c}
+
+.card{
+border-radius:28px;
+padding:8px 20px
+}
+
+.row{
+display:flex;
+align-items:center;
+gap:14px;
+padding:17px 0
+}
+
+.row:not(:last-child){
+border-bottom:1px solid #ffffff0c
+}
+
 .icon{
-width:50px;height:50px;min-width:50px;border-radius:17px;
-display:grid;place-items:center;color:#5bb8ff;background:#007aff18
+width:50px;
+height:50px;
+min-width:50px;
+border-radius:17px;
+display:grid;
+place-items:center;
+color:#5bb8ff;
+background:#007aff18
 }
+
 .icon svg{width:25px}
-.row small,.person small{display:block;color:#7f8b9d;font-size:11px;margin-bottom:4px}
-.row b{font-size:14px}
-h2{font-size:27px;margin:38px 5px 7px}
-.sub{color:#7f8b9d;font-size:13px;margin:0 5px 18px}
 
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.row small,.person small{
+display:block;
+color:#7f8b9d;
+font-size:11px;
+margin-bottom:4px
+}
+
+.row b{
+font-size:14px;
+font-weight:700
+}
+
+h2{
+font-size:27px;
+margin:38px 5px 7px;
+font-weight:800
+}
+
+.sub{
+color:#7f8b9d;
+font-size:13px;
+margin:0 5px 18px;
+font-weight:500
+}
+
+.products{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:13px
+}
+
 .product{
-border-radius:25px;padding:19px;min-height:175px;transition:.3s;cursor:pointer
+border-radius:25px;
+padding:19px;
+min-height:175px;
+transition:.3s;
+cursor:pointer
 }
-.product:hover{transform:translateY(-6px);border-color:#007aff55}
-.product .icon{margin-bottom:16px}
-.product h3{font-size:16px;margin-bottom:6px}
-.product p{font-size:11px;color:#7f8b9d;line-height:1.7}
 
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
-.stat{text-align:center;padding:20px 5px;border-radius:21px;background:#ffffff08;border:1px solid #ffffff0d}
-.stat b{display:block;font-size:23px}.stat span{font-size:10px;color:#778395}
+.product:hover{
+transform:translateY(-6px);
+border-color:#007aff55
+}
 
-.team{display:grid;gap:12px}
+.product .icon{
+margin-bottom:16px
+}
+
+.product h3{
+font-size:16px;
+margin-bottom:6px;
+font-weight:700
+}
+
+.product p{
+font-size:11px;
+color:#7f8b9d;
+line-height:1.7;
+font-weight:500
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:14px
+}
+
+.stat{
+text-align:center;
+padding:20px 5px;
+border-radius:21px;
+background:#ffffff08;
+border:1px solid #ffffff0d
+}
+
+.stat b{
+display:block;
+font-size:23px;
+font-weight:800
+}
+
+.stat span{
+font-size:10px;
+color:#778395
+}
+
+.team{
+display:grid;
+gap:12px
+}
+
 .person{
-display:flex;align-items:center;gap:13px;padding:14px;border-radius:23px;transition:.3s
+display:flex;
+align-items:center;
+gap:13px;
+padding:14px;
+border-radius:23px;
+transition:.3s
 }
-.person:hover{transform:translateX(-5px)}
-.person .icon{color:white;background:linear-gradient(145deg,#007aff,#5058ff)}
-.person-info{flex:1}.person-info b{font-size:15px}
-.phone{display:block;direction:ltr;text-align:right;color:#59b3ff;font-size:11px;margin-top:4px}
+
+.person:hover{
+transform:translateX(-5px)
+}
+
+.person .icon{
+color:white;
+background:linear-gradient(145deg,#007aff,#5058ff)
+}
+
+.person-info{
+flex:1
+}
+
+.person-info b{
+font-size:15px;
+font-weight:700
+}
+
+.phone{
+display:block;
+direction:ltr;
+text-align:right;
+color:#59b3ff;
+font-size:11px;
+margin-top:4px;
+font-family:Arial,sans-serif
+}
+
 .call{
-width:44px;height:44px;border-radius:15px;display:grid;place-items:center;
-color:#61b8ff;background:#007aff18;text-decoration:none
+width:44px;
+height:44px;
+border-radius:15px;
+display:grid;
+place-items:center;
+color:#61b8ff;
+background:#007aff18;
+text-decoration:none
 }
+
 .call svg{width:20px}
 
-.contact{margin-top:35px;padding:27px;border-radius:29px}
-.contact h2{margin:0 0 8px;font-size:22px}
-.contact p{color:#8793a5;font-size:13px;line-height:1.8;margin-bottom:18px}
+.contact{
+margin-top:35px;
+padding:27px;
+border-radius:29px
+}
+
+.contact h2{
+margin:0 0 8px;
+font-size:22px
+}
+
+.contact p{
+color:#8793a5;
+font-size:13px;
+line-height:1.8;
+margin-bottom:18px
+}
+
 .maincall{
-display:block;text-align:center;text-decoration:none;color:white;font-weight:bold;
-padding:15px;border-radius:17px;background:linear-gradient(135deg,#007aff,#5058ff)
+display:block;
+text-align:center;
+text-decoration:none;
+color:white;
+font-weight:bold;
+padding:15px;
+border-radius:17px;
+background:linear-gradient(135deg,#007aff,#5058ff)
 }
-.footer{text-align:center;color:#5e6a7b;font-size:11px;padding:30px 10px}
+
+.footer{
+text-align:center;
+color:#5e6a7b;
+font-size:11px;
+padding:30px 10px
+}
+
 .float{
-position:fixed;bottom:18px;left:18px;width:57px;height:57px;border-radius:19px;
-display:grid;place-items:center;background:linear-gradient(145deg,#007aff,#5058ff);
-box-shadow:0 12px 35px #007aff66;z-index:10
+position:fixed;
+bottom:18px;
+left:18px;
+width:57px;
+height:57px;
+border-radius:19px;
+display:grid;
+place-items:center;
+background:linear-gradient(145deg,#007aff,#5058ff);
+box-shadow:0 12px 35px #007aff66;
+z-index:10
 }
-.float svg{width:24px;color:white}
 
-.reveal{opacity:0;transform:translateY(20px);transition:.7s}
-.show{opacity:1;transform:none}
+.float svg{
+width:24px;
+color:white
+}
 
-@media(min-width:650px){.products{grid-template-columns:repeat(3,1fr)}}
+.reveal{
+opacity:0;
+transform:translateY(20px);
+transition:.7s
+}
+
+.show{
+opacity:1;
+transform:none
+}
+
+@media(min-width:650px){
+.products{
+grid-template-columns:repeat(3,1fr)
+}
+}
 </style>
 </head>
 
 <body>
 
 <header class="header">
+
 <div class="top">
 
-<div class="badge">PREMIUM COMPUTER STORE</div>
+<div class="badge">
+PREMIUM COMPUTER STORE
+</div>
 
 <div class="logo">
 <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.7">
@@ -138,9 +417,13 @@ box-shadow:0 12px 35px #007aff66;z-index:10
 </div>
 
 <div class="hero">
+
 <small>ESTAFCO INTERNATIONAL</small>
 
-<h1>استافكو<br>إنترناشيونال</h1>
+<h1>
+استافكو<br>
+إنترناشيونال
+</h1>
 
 <p>
 حلول متكاملة للكمبيوترات والصيانة والإكسسوارات
@@ -148,9 +431,17 @@ box-shadow:0 12px 35px #007aff66;z-index:10
 </p>
 
 <div class="buttons">
-<a class="btn primary" href="tel:+249110201582">📞 اتصل بنا</a>
-<a class="btn secondary" href="#products">اكتشف منتجاتنا ↓</a>
+
+<a class="btn primary" href="tel:+249110201582">
+📞 اتصل بنا
+</a>
+
+<a class="btn secondary" href="#products">
+اكتشف منتجاتنا ↓
+</a>
+
 </div>
+
 </div>
 </header>
 
@@ -160,25 +451,49 @@ box-shadow:0 12px 35px #007aff66;z-index:10
 <div class="card reveal">
 
 <div class="row">
+
 <div class="icon">📍</div>
-<div><small>الموقع</small><b>الشهداء، جوار عبدالله خليل</b></div>
+
+<div>
+<small>الموقع</small>
+<b>الشهداء، جوار عبدالله خليل</b>
+</div>
+
 </div>
 
 <div class="row">
+
 <div class="icon">💻</div>
-<div><small>التخصص</small><b>متجر كمبيوتر وتقنية</b></div>
+
+<div>
+<small>التخصص</small>
+<b>متجر كمبيوتر وتقنية</b>
+</div>
+
 </div>
 
 <div class="row">
+
 <div class="icon">🛠</div>
-<div><small>الخدمات</small><b>بيع وصيانة الأجهزة</b></div>
+
+<div>
+<small>الخدمات</small>
+<b>بيع وصيانة الأجهزة</b>
 </div>
 
 </div>
 
+</div>
 
-<h2 id="products" class="reveal">منتجاتنا</h2>
-<p class="sub reveal">كل ما تحتاجه للكمبيوتر في مكان واحد</p>
+
+<h2 id="products" class="reveal">
+منتجاتنا
+</h2>
+
+<p class="sub reveal">
+كل ما تحتاجه للكمبيوتر في مكان واحد
+</p>
+
 
 <div class="products">
 
@@ -222,48 +537,120 @@ box-shadow:0 12px 35px #007aff66;z-index:10
 
 
 <div class="stats reveal">
-<div class="stat"><b>24/7</b><span>خدمة العملاء</span></div>
-<div class="stat"><b>100%</b><span>اهتمام بالعميل</span></div>
-<div class="stat"><b>PRO</b><span>خدمة احترافية</span></div>
+
+<div class="stat">
+<b>24/7</b>
+<span>خدمة العملاء</span>
+</div>
+
+<div class="stat">
+<b>100%</b>
+<span>اهتمام بالعميل</span>
+</div>
+
+<div class="stat">
+<b>PRO</b>
+<span>خدمة احترافية</span>
+</div>
+
 </div>
 
 
-<h2 class="reveal">فريق استافكو</h2>
-<p class="sub reveal">خبرة وتقنية وخدمة مباشرة</p>
+<h2 class="reveal">
+فريق استافكو
+</h2>
+
+<p class="sub reveal">
+خبرة وتقنية وخدمة مباشرة
+</p>
+
 
 <div class="team">
 
 <div class="person reveal">
+
 <div class="icon">👨‍💻</div>
-<div class="person-info"><small>المبرمج</small><b>عليش</b><span class="phone">+249 110 201 581</span></div>
-<a class="call" href="tel:+249110201581">☎</a>
+
+<div class="person-info">
+<small>هندسة البرمجيات</small>
+<b>عليش</b>
+<span class="phone">+249 110 201 581</span>
 </div>
 
+<a class="call" href="tel:+249110201581">
+☎
+</a>
+
+</div>
+
+
 <div class="person reveal">
+
 <div class="icon">🛠</div>
-<div class="person-info"><small></small>الصيانة</small><b>حسان</b><span class="phone">+249 110 201 583</span></div>
-<a class="call" href="tel:+249110201583">☎</a>
+
+<div class="person-info">
+<small>صيانة</small>
+<b>حسان</b>
+<span class="phone">+249 110 201 583</span>
 </div>
 
+<a class="call" href="tel:+249110201583">
+☎
+</a>
+
+</div>
+
+
 <div class="person reveal">
+
 <div class="icon">👨‍🔧</div>
-<div class="person-info"><small>المهندس</small><b>أمير فاروق</b><span class="phone">+249 110 201 582</span></div>
-<a class="call" href="tel:+249110201582">☎</a>
+
+<div class="person-info">
+<small>المهندس</small>
+<b>أمير فاروق</b>
+<span class="phone">+249 110 201 582</span>
 </div>
 
+<a class="call" href="tel:+249110201582">
+☎
+</a>
+
+</div>
+
+
 <div class="person reveal">
+
 <div class="icon">👥</div>
-<div class="person-info"><small>المبيعات</small><b>أويس الوسيلة</b><span class="phone">+249 110 201 580</span></div>
-<a class="call" href="tel:+249110201580">☎</a>
+
+<div class="person-info">
+<small>المبيعات</small>
+<b>أويس الوسيلة</b>
+<span class="phone">+249 110 201 580</span>
+</div>
+
+<a class="call" href="tel:+249110201580">
+☎
+</a>
+
 </div>
 
 </div>
 
 
 <div class="contact reveal">
-<h2>تواصل مع استافكو</h2>
-<p>للاستفسار عن الكمبيوترات أو الصيانة أو الإكسسوارات والطابعات.</p>
-<a class="maincall" href="tel:+249110201582">📞 اتصال بالمتجر</a>
+
+<h2>
+تواصل مع استافكو
+</h2>
+
+<p>
+للاستفسار عن الكمبيوترات أو الصيانة أو الإكسسوارات والطابعات.
+</p>
+
+<a class="maincall" href="tel:+249110201582">
+📞 اتصال بالمتجر
+</a>
+
 </div>
 
 
@@ -275,7 +662,9 @@ box-shadow:0 12px 35px #007aff66;z-index:10
 </main>
 
 
-<a class="float" href="tel:+249110201582">☎</a>
+<a class="float" href="tel:+249110201582">
+☎
+</a>
 
 
 <script>
@@ -289,9 +678,11 @@ observer.unobserve(x.target);
 });
 },{threshold:.12});
 
-document.querySelectorAll(".reveal").forEach(x=>observer.observe(x));
+document.querySelectorAll(".reveal")
+.forEach(x=>observer.observe(x));
 
-document.querySelectorAll(".product").forEach(x=>{
+document.querySelectorAll(".product")
+.forEach(x=>{
 x.onclick=()=>{
 alert(
 "استافكو إنترناشيونال\n\nالقسم: "+
@@ -303,4 +694,4 @@ x.querySelector("h3").textContent
 </script>
 
 </body>
-</html>
+  </html>
