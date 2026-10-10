@@ -1,94 +1,826 @@
-<!-- PED SAN APP DOWNLOAD -->
-<section class="app-download" dir="rtl">
-  <div class="app-card">
-    <div class="app-icon">P</div>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090909">
+<meta name="description" content="PED SAN — تعلّم، اكتشف مهارات جديدة، وطوّر نفسك من خلال الشروحات والدروس التعليمية.">
+<title>PED SAN | تعلّم بلا حدود</title>
 
-    <h2>PED SAN</h2>
-    <p class="version">الإصدار 1.0</p>
-    <p class="description">
-      حمّل تطبيق PED SAN واستمتع بجميع المميزات.
-    </p>
-
-    <a
-      class="download-btn"
-      href="https://github.com/pedrohk400-bot/JACKVIP/raw/refs/heads/main/PED%20SAN_1.0.apk"
-      download
-    >
-      ⬇ تنزيل التطبيق الآن
-    </a>
-
-    <p class="install-note">
-      بعد اكتمال التنزيل، افتح ملف APK واتبع تعليمات التثبيت.
-    </p>
-  </div>
-</section>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-.app-download {
-  padding: 35px 16px;
-  font-family: Arial, sans-serif;
-  color: white;
-  text-align: center;
+:root {
+  --red: #ff2525;
+  --red2: #b50000;
+  --bg: #080808;
+  --panel: rgba(255,255,255,.045);
+  --border: rgba(255,255,255,.09);
+  --muted: #a5a5a5;
 }
 
-.app-card {
-  max-width: 380px;
-  margin: auto;
-  padding: 28px 20px;
-  border: 1px solid rgba(255,255,255,.16);
-  border-radius: 24px;
-  background: linear-gradient(145deg, #240808, #090909 65%);
-  box-shadow: 0 10px 35px rgba(255,0,0,.15);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.app-icon {
-  width: 85px;
-  height: 85px;
-  line-height: 85px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg);
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(ellipse at 85% 5%, rgba(180,0,0,.24), transparent 40%),
+    radial-gradient(ellipse at 0% 55%, rgba(120,0,0,.12), transparent 40%),
+    linear-gradient(180deg, #0d0909, #070707 55%, #100606);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+.container {
+  width: min(1100px, 100% - 36px);
   margin: auto;
-  border-radius: 22px;
-  background: linear-gradient(145deg, #ff3333, #a00000);
-  font-size: 42px;
-  font-weight: bold;
+}
+
+/* شريط التنقل */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(8,8,8,.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,.07);
+}
+
+.nav {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  font-weight: 900;
+  background: linear-gradient(140deg, #ff4141, #920000);
   box-shadow: 0 0 25px rgba(255,0,0,.25);
 }
 
-.app-card h2 {
-  margin: 18px 0 8px;
-  font-size: 27px;
+.brand span {
+  color: var(--red);
 }
 
-.version {
-  color: #ff6565;
-  font-size: 14px;
+.nav-links {
+  display: flex;
+  gap: 22px;
+  color: #c4c4c4;
+  font-size: 13px;
 }
 
-.description {
-  color: #ddd;
-  line-height: 1.8;
+.nav-links a:hover {
+  color: #fff;
 }
 
-.download-btn {
-  display: block;
-  margin-top: 24px;
-  padding: 16px 12px;
-  border-radius: 14px;
-  color: white;
-  text-decoration: none;
-  font-size: 17px;
-  font-weight: bold;
-  background: linear-gradient(90deg, #e00000, #ff3030);
-  box-shadow: 0 5px 20px rgba(255,0,0,.2);
-}
-
-.download-btn:active {
-  transform: scale(.97);
-}
-
-.install-note {
-  margin-top: 18px;
-  color: #aaa;
+.nav-download {
+  background: rgba(255,37,37,.12);
+  border: 1px solid rgba(255,37,37,.4);
+  padding: 9px 15px;
+  border-radius: 12px;
   font-size: 12px;
-  line-height: 1.8;
+  font-weight: 800;
+}
+
+/* الواجهة الرئيسية */
+
+.hero {
+  min-height: 620px;
+  min-height: min(780px, calc(100svh - 72px));
+  display: flex;
+  align-items: center;
+  padding: 65px 0 75px;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 750px;
+  margin: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 15px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,50,50,.28);
+  background: rgba(255,30,30,.07);
+  color: #ff9292;
+  font-size: 12px;
+  margin-bottom: 26px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 12px var(--red);
+}
+
+.hero h1 {
+  font-size: clamp(38px, 8vw, 76px);
+  line-height: 1.35;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 .accent {
+  color: var(--red);
+  text-shadow: 0 0 35px rgba(255,0,0,.2);
+}
+
+.hero-description {
+  max-width: 570px;
+  margin: 20px auto 0;
+  color: #b7b7b7;
+  font-size: 15px;
+  line-height: 2.1;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 13px 24px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 800;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(110deg, #ff3535, #c90000);
+  box-shadow: 0 8px 30px rgba(220,0,0,.22);
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.btn-secondary {
+  color: #eee;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.13);
+}
+
+.hero-note {
+  color: #777;
+  font-size: 11px;
+  margin-top: 17px;
+}
+
+.scroll-cue {
+  margin-top: 48px;
+  color: #777;
+  font-size: 12px;
+}
+
+.scroll-cue span {
+  display: block;
+  font-size: 21px;
+  color: #ff4444;
+  margin-top: 5px;
+}
+
+/* الأقسام */
+
+section.content-section {
+  padding: 85px 0;
+}
+
+.section-head {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-label {
+  color: #ff6868;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.section-head h2 {
+  font-size: clamp(26px, 5vw, 39px);
+  font-weight: 900;
+}
+
+.section-head p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  max-width: 580px;
+  margin: 12px auto 0;
+}
+
+/* المميزات */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.feature {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 17px;
+  transition: .25s;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,40,40,.4);
+  background: rgba(255,30,30,.055);
+}
+
+.feature-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  color: #ff6565;
+  background: rgba(255,30,30,.1);
+  border: 1px solid rgba(255,50,50,.12);
+  font-size: 23px;
+  margin-bottom: 18px;
+}
+
+.feature h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* الشروحات */
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.lesson {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 23px;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lesson-symbol {
+  font-size: 25px;
+  margin-bottom: 17px;
+}
+
+.lesson h3 {
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+
+.lesson p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.lesson-tag {
+  margin-top: auto;
+  padding-top: 15px;
+  color: #ff7777;
+  font-size: 11px;
+}
+
+/* الفيديوهات */
+
+.video-panel {
+  border: 1px solid rgba(255,40,40,.2);
+  background: linear-gradient(130deg, rgba(100,0,0,.2), rgba(255,255,255,.025));
+  border-radius: 25px;
+  padding: 35px 25px;
+  text-align: center;
+}
+
+.play-icon {
+  width: 74px;
+  height: 74px;
+  margin: 0 auto 20px;
+  display: grid;
+  place-items: center;
+  border-radius: 23px;
+  background: linear-gradient(140deg, #ff3838, #9b0000);
+  font-size: 27px;
+  box-shadow: 0 0 40px rgba(255,0,0,.17);
+}
+
+.video-panel h3 {
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.video-panel p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 2;
+  max-width: 580px;
+  margin: auto;
+}
+
+.video-panel .btn {
+  margin-top: 22px;
+}
+
+/* دعوة التنزيل */
+
+.download-section {
+  padding: 45px 0 95px;
+}
+
+.download-card {
+  text-align: center;
+  padding: 48px 22px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 1px solid rgba(255,40,40,.25);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,0,0,.15), transparent 65%),
+    rgba(255,255,255,.025);
+}
+
+.download-card h2 {
+  font-size: clamp(28px, 5vw, 43px);
+  font-weight: 900;
+}
+
+.download-card p {
+  color: #aaa;
+  font-size: 13px;
+  line-height: 2;
+  margin: 14px auto 25px;
+  max-width: 520px;
+}
+
+.app-version {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  color: #ccc;
+  font-size: 11px;
+  padding: 6px 13px;
+  margin-bottom: 18px;
+}
+
+/* تذييل */
+
+footer {
+  border-top: 1px solid rgba(255,255,255,.07);
+  padding: 25px 0;
+  color: #777;
+  font-size: 11px;
+  text-align: center;
+  line-height: 2;
+}
+
+footer strong {
+  color: #ff5555;
+}
+
+/* شريط الهاتف السفلي */
+
+.mobile-nav {
+  display: none;
+}
+
+/* استجابة الشاشات */
+
+@media (max-width: 760px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  .nav {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .logo {
+    width: 37px;
+    height: 37px;
+    border-radius: 12px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-download {
+    padding: 8px 11px;
+    font-size: 11px;
+  }
+
+  .hero {
+    min-height: calc(100svh - 64px);
+    padding: 50px 0 40px;
+  }
+
+  .hero h1 {
+    letter-spacing: -.6px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+  }
+
+  .btn {
+    min-height: 49px;
+    padding: 12px 17px;
+    font-size: 12px;
+  }
+
+  section.content-section {
+    padding: 60px 0;
+  }
+
+  .features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px;
+  }
+
+  .feature {
+    padding: 19px 14px;
+  }
+
+  .lesson-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .lesson {
+    min-height: 160px;
+  }
+
+  .video-panel {
+    padding: 28px 17px;
+  }
+
+  .download-card {
+    padding: 37px 17px;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    bottom: 10px;
+    left: 12px;
+    right: 12px;
+    z-index: 90;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 11px 5px;
+    border-radius: 19px;
+    border: 1px solid rgba(255,255,255,.13);
+    background: rgba(15,15,15,.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 35px rgba(0,0,0,.5);
+  }
+
+  .mobile-nav a {
+    text-align: center;
+    color: #aaa;
+    font-size: 10px;
+    min-width: 55px;
+  }
+
+  .mobile-nav a span {
+    display: block;
+    font-size: 19px;
+    margin-bottom: 3px;
+  }
+
+  .mobile-nav a.active {
+    color: #ff5555;
+  }
+
+  footer {
+    padding-bottom: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
 }
 </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <div class="logo">P</div>
+      <div>PED <span>SAN</span></div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">الرئيسية</a>
+      <a href="#features">المميزات</a>
+      <a href="#lessons">الشروحات</a>
+      <a href="#videos">الفيديوهات</a>
+    </nav>
+
+    <a class="nav-download"
+       href="https://github.com/pedrohk400-bot/my-website/raw/refs/heads/main/PED%20SAN_1.0.apk">
+      تنزيل التطبيق ↓
+    </a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container hero-content">
+
+      <div class="eyebrow">
+        <span class="dot"></span>
+        عالم المعرفة يبدأ من هنا
+      </div>
+
+      <h1>
+        تعلّم اليوم...<br>
+        <span class="accent">واصنع فرق بكرة.</span>
+      </h1>
+
+      <p class="hero-description">
+        مرحباً بك في PED SAN، مساحتك للتعلّم واكتشاف المهارات.
+        شروحات واضحة، محتوى تعليمي، وتجربة بسيطة تساعدك
+        تتقدم خطوة بخطوة، في أي وقت ومن هاتفك.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary"
+           href="https://github.com/pedrohk400-bot/my-website/raw/refs/heads/main/PED%20SAN_1.0.apk">
+          <span>⬇</span> تنزيل PED SAN
+        </a>
+
+        <a class="btn btn-secondary" href="#features">
+          اكتشف المميزات <span>←</span>
+        </a>
+      </div>
+
+      <div class="hero-note">
+        تطبيق أندرويد · الإصدار 1.0
+      </div>
+
+      <div class="scroll-cue">
+        اكتشف ما ينتظرك داخل PED SAN
+        <span>↓</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="content-section" id="features">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">لماذا PED SAN؟</div>
+        <h2>تعلّم بطريقتك</h2>
+        <p>
+          صممنا تجربة بسيطة تساعدك على الوصول إلى المعرفة
+          وفهم المعلومات بطريقة أوضح وأسهل.
+        </p>
+      </div>
+
+      <div class="features">
+        <article class="feature">
+          <div class="feature-icon">✦</div>
+          <h3>شروحات واضحة</h3>
+          <p>محتوى مرتب يساعدك على فهم الموضوع خطوة بخطوة.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">▶</div>
+          <h3>تعلّم بالفيديو</h3>
+          <p>استفد من الدروس المرئية عندما تتوفر داخل التطبيق.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">⌘</div>
+          <h3>مجالات متنوعة</h3>
+          <p>مساحة لاكتشاف موضوعات ومهارات تعليمية مختلفة.</p>
+        </article>
+
+        <article class="feature">
+          <div class="feature-icon">◈</div>
+          <h3>من هاتفك مباشرة</h3>
+          <p>واجهة سهلة تساعدك على متابعة التعلّم من هاتفك.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="lessons">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">ابدأ رحلتك</div>
+        <h2>المعرفة أقرب إليك</h2>
+        <p>
+          اختر موضوعاً يثير اهتمامك، تعلّم شيئاً جديداً،
+          وواصل التطور على حسب وقتك واهتماماتك.
+        </p>
+      </div>
+
+      <div class="lesson-grid">
+        <article class="lesson">
+          <div class="lesson-symbol">📘</div>
+          <h3>شروحات خطوة بخطوة</h3>
+          <p>تابع الشرح بالترتيب وارجع للمعلومة متى احتجت إليها.</p>
+          <div class="lesson-tag">تعلّم • افهم • طبّق</div>
+        </article>
+
+        <article class="lesson">
+          <div class="lesson-symbol">🎬</div>
+          <h3>دروس بالفيديو</h3>
+          <p>شاهد الفيديوهات التعليمية المتاحة واستفد من الشرح المرئي.</p>
+          <div class="lesson-tag">شاهد وتعلّم</div>
+        </article>
+
+        <article class="lesson">
+          <div class="lesson-symbol">💡</div>
+          <h3>طوّر مهاراتك</h3>
+          <p>اجعل كل درس فرصة لاكتساب معلومة جديدة وتوسيع معرفتك.</p>
+          <div class="lesson-tag">خطوة جديدة كل يوم</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" id="videos">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-label">التعلّم المرئي</div>
+        <h2>شاهد. افهم. تقدّم.</h2>
+        <p>
+          الفيديو الجيد يجعل الفكرة أقرب للفهم.
+          تابع الدروس المرئية المتاحة داخل التطبيق
+          واستفد من وقتك في اكتساب معرفة جديدة.
+        </p>
+      </div>
+
+      <div class="video-panel">
+        <div class="play-icon">▶</div>
+        <h3>خلّي تعلّمك مستمر</h3>
+        <p>
+          افتح PED SAN واستكشف الشروحات المتوفرة.
+          ومع إضافة دروس جديدة، ارجع للموقع والتطبيق
+          لمتابعة أحدث المحتويات المنشورة.
+        </p>
+        <a class="btn btn-primary"
+           href="https://github.com/pedrohk400-bot/my-website/raw/refs/heads/main/PED%20SAN_1.0.apk">
+          ابدأ مع PED SAN
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="download-section" id="download">
+    <div class="container">
+      <div class="download-card">
+        <div class="app-version">PED SAN · VERSION 1.0</div>
+        <h2>رحلتك تبدأ بخطوة</h2>
+        <p>
+          لا تنتظر الوقت المناسب لتتعلّم.
+          ابدأ الآن، اكتشف موضوعات جديدة،
+          وامنح نفسك فرصة للتطور كل يوم.
+        </p>
+
+        <a class="btn btn-primary"
+           href="https://github.com/pedrohk400-bot/my-website/raw/refs/heads/main/PED%20SAN_1.0.apk">
+          ⬇ تنزيل التطبيق الآن
+        </a>
+
+        <p style="font-size:11px;margin-top:18px;">
+          بعد التنزيل، افتح ملف APK واتبع تعليمات أندرويد للتثبيت.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="brand" style="justify-content:center;margin-bottom:10px;">
+      <div class="logo">P</div>
+      <div>PED <span>SAN</span></div>
+    </div>
+    <p>مساحتك للتعلّم والمعرفة.</p>
+    <p>© <span id="year"></span> PED SAN — جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav" aria-label="التنقل">
+  <a href="#home" class="active"><span>⌂</span>الرئيسية</a>
+  <a href="#features"><span>✦</span>المميزات</a>
+  <a href="#lessons"><span>▤</span>الشروحات</a>
+  <a href="#videos"><span>▶</span>الفيديوهات</a>
+  <a href="#download"><span>⬇</span>التنزيل</a>
+</nav>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+var navLinks = document.querySelectorAll(".mobile-nav a");
+
+navLinks.forEach(function(link) {
+  link.addEventListener("click", function() {
+    navLinks.forEach(function(item) {
+      item.classList.remove("active");
+    });
+    link.classList.add("active");
+  });
+});
+</script>
+
+</body>
+</html>
