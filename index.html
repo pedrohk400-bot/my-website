@@ -5,7 +5,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
+
 <title>PED SAN</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -19,66 +24,119 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 22px;
+
     background:
-        radial-gradient(ellipse at 50% 42%,
-        #3b000c 0%, #150005 35%, #050505 75%);
-    font-family: Arial, sans-serif;
-    color: white;
+        radial-gradient(ellipse at 50% 40%,
+        #40000e 0%, #190006 40%, #050505 80%);
+
+    font-family: 'Cairo', sans-serif;
+    color: #ffffff;
 }
 
 .container {
-    width: 90%;
-    max-width: 380px;
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    padding: 45px 22px;
-    border: 1px solid #570012;
-    border-radius: 24px;
-    background: rgba(15, 5, 7, 0.75);
-    box-shadow: 0 0 45px rgba(220, 0, 40, 0.12);
+    padding: 38px 24px;
+
+    border: 1px solid rgba(255, 35, 70, 0.35);
+    border-radius: 25px;
+
+    background: rgba(15, 5, 7, 0.82);
+
+    box-shadow:
+        0 0 45px rgba(220, 0, 40, 0.12),
+        inset 0 0 25px rgba(120, 0, 20, 0.08);
 }
 
 .logo {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 28px;
+    width: 92px;
+    height: 92px;
+    margin: 0 auto 22px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     border-radius: 25px;
-    border: 1px solid #ff2449;
-    background: linear-gradient(145deg, #b00024, #180006);
-    box-shadow: 0 0 30px rgba(255, 0, 50, 0.25);
-    font-size: 30px;
+    border: 1px solid #ff3858;
+
+    background: linear-gradient(145deg, #c0002b, #210007);
+
+    box-shadow: 0 0 30px rgba(255, 0, 50, 0.23);
+
+    font-family: Arial, sans-serif;
+    font-size: 29px;
     font-weight: 900;
     letter-spacing: -2px;
 }
 
 h1 {
-    font-size: 36px;
-    letter-spacing: 4px;
-    margin-bottom: 35px;
-    text-shadow: 0 0 20px rgba(255, 0, 45, 0.4);
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+
+    text-shadow: 0 0 22px rgba(255, 0, 45, 0.35);
+}
+
+.welcome {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2.1;
+    color: #d0c6c9;
+    margin-bottom: 27px;
 }
 
 .download {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
     width: 100%;
-    padding: 16px;
-    color: white;
+    padding: 14px 18px;
+
+    color: #ffffff;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 800;
+
     border-radius: 13px;
-    border: 1px solid #ff526d;
+    border: 1px solid #ff536f;
+
     background: linear-gradient(100deg, #a80020, #ed1239);
+
     box-shadow: 0 5px 25px rgba(220, 0, 40, 0.22);
-    transition: 0.2s;
+
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .download:active {
     transform: scale(0.96);
+    box-shadow: 0 0 15px rgba(255, 0, 50, 0.35);
 }
 
+.download svg {
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 30px 18px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .welcome {
+        font-size: 14px;
+    }
+}
 </style>
 </head>
 
@@ -90,9 +148,26 @@ h1 {
 
     <h1>PED SAN</h1>
 
+    <p class="welcome">
+        مرحباً بك في PED SAN، مساحتك للتعلّم واكتشاف المهارات.
+        شروحات واضحة، محتوى تعليمي، وتجربة بسيطة تساعدك تتقدم
+        خطوة بخطوة، في أي وقت ومن هاتفك.
+    </p>
+
     <a class="download"
-       href="https://drive.google.com/uc?export=download&id=1V9MyEawmnBK6OFYDRR5o3lhxFiX4ale-">
-       تحميل التطبيق
+       href="https://drive.google.com/uc?export=download&id=1V9MyEawmnBK6OFYDRR5o3lhxFiX4ale-"
+       target="_blank"
+       rel="noopener">
+
+        <svg viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3v12"/>
+            <path d="m7 10 5 5 5-5"/>
+            <path d="M5 17v3h14v-3"/>
+        </svg>
+
+        تحميل التطبيق
     </a>
 
 </div>
